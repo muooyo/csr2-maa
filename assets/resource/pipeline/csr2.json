@@ -1,0 +1,406 @@
+{
+  "开始挂机": {
+    "next": [
+      "[JumpBack]对手离线",
+      "[JumpBack]获胜者",
+      "[JumpBack]检测匹配"
+    ]
+  },
+  "检测匹配": {
+    "post_wait_freezes": {
+      "time": 3000,
+      "target": [
+        893,
+        246,
+        73,
+        72
+      ]
+    },
+    "next": [
+      "加油"
+    ]
+  },
+  "加油": {
+    "timeout": -1,
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          1051,
+          260,
+          204,
+          269
+        ],
+        "template": [
+          "加油.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "挡位识别"
+    ]
+  },
+  "挡位识别": {
+    "next": [
+      "[JumpBack]挡位1",
+      "[JumpBack]挡位2",
+      "[JumpBack]挡位3",
+      "[JumpBack]挡位4",
+      "挡位5"
+    ]
+  },
+  "挡位1": {
+    "timeout": 500,
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "1"
+        ],
+        "roi": [
+          628,
+          553,
+          23,
+          30
+        ]
+      }
+    },
+    "next": [
+      "加档1"
+    ]
+  },
+  "挡位2": {
+    "timeout": 500,
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "2"
+        ],
+        "roi": [
+          628,
+          553,
+          23,
+          30
+        ]
+      }
+    },
+    "next": [
+      "加档1"
+    ]
+  },
+  "挡位3": {
+    "timeout": 500,
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "3"
+        ],
+        "roi": [
+          628,
+          553,
+          23,
+          30
+        ]
+      }
+    },
+    "next": [
+      "加档1"
+    ]
+  },
+  "挡位4": {
+    "timeout": 500,
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "4"
+        ],
+        "roi": [
+          628,
+          553,
+          23,
+          30
+        ]
+      }
+    },
+    "next": [
+      "加档1"
+    ]
+  },
+  "挡位5": {
+    "timeout": 500,
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "5"
+        ],
+        "roi": [
+          628,
+          553,
+          23,
+          30
+        ]
+      }
+    },
+    "next": [
+      "识别离线或完赛"
+    ]
+  },
+  "加档1": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          989,
+          466,
+          291,
+          254
+        ],
+        "template": [
+          "加档.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    }
+  },
+  "识别离线或完赛": {
+    "timeout": -1,
+    "next": [
+      "对手离线",
+      "获胜者"
+    ]
+  },
+  "对手离线": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          490,
+          209,
+          289,
+          119
+        ],
+        "expected": [
+          "放棄的比赛",
+          "放弃的比赛"
+        ]
+      }
+    },
+    "next": [
+      "点击确认"
+    ]
+  },
+  "点击确认": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          572,
+          540,
+          128,
+          102
+        ],
+        "expected": [
+          "确定"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "点击下一步"
+    ]
+  },
+  "获胜者": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          166,
+          106,
+          524,
+          165
+        ],
+        "expected": [
+          "获胜者"
+        ]
+      }
+    },
+    "next": [
+      "点击下一步"
+    ]
+  },
+  "点击下一步": {
+    "post_delay": 10000,
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          563,
+          543,
+          159,
+          132
+        ],
+        "template": [
+          "下一步.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "识别是否获取奖励"
+    ]
+  },
+  "识别是否获取奖励": {
+    "next": [
+      "获取奖励",
+      "参赛奖励"
+    ]
+  },
+  "获取奖励": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          258,
+          556,
+          62,
+          60
+        ],
+        "template": [
+          "领取奖励.png"
+        ]
+      }
+    },
+    "next": [
+      "领取"
+    ]
+  },
+  "领取": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          745,
+          547,
+          133,
+          89
+        ],
+        "expected": [
+          "领取"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "参赛奖励"
+    ]
+  },
+  "参赛奖励": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          798,
+          206,
+          165,
+          95
+        ],
+        "expected": [
+          "参赛奖励"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "识别是否出现油量"
+    ]
+  },
+  "识别是否出现油量": {
+    "next": [
+      "出现油量",
+      "参赛奖励"
+    ]
+  },
+  "出现油量": {
+    "post_delay": 420000,
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          343,
+          24,
+          28,
+          28
+        ],
+        "template": [
+          "油箱.png"
+        ]
+      }
+    },
+    "next": [
+      "识别油量"
+    ]
+  },
+  "识别油量": {
+    "timeout": -1,
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          344,
+          0,
+          115,
+          83
+        ],
+        "expected": [
+          "10/10"
+        ]
+      }
+    },
+    "next": [
+      "点击下一步2"
+    ]
+  },
+  "点击下一步2": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          563,
+          543,
+          159,
+          132
+        ],
+        "template": [
+          "下一步.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    }
+  }
+}
