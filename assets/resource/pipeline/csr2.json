@@ -3,7 +3,28 @@
     "next": [
       "[JumpBack]对手离线",
       "[JumpBack]获胜者",
+      // "[JumpBack]识别是否出现油量",
       "[JumpBack]检测匹配"
+      // "[JumpBack]匹配检测"
+    ]
+  },
+  "匹配检测": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          95,
+          339,
+          87,
+          73
+        ],
+        "expected": [
+          "起步"
+        ]
+      }
+    },
+    "next": [
+      "加油"
     ]
   },
   "检测匹配": {
@@ -192,7 +213,8 @@
         ],
         "expected": [
           "放棄的比赛",
-          "放弃的比赛"
+          "放弃的比赛",
+          "对手连接中断"
         ]
       }
     },
@@ -344,18 +366,18 @@
     ]
   },
   "出现油量": {
-    "post_delay": 420000,
+    "post_delay": 360000,
     "recognition": {
       "type": "TemplateMatch",
       "param": {
         "roi": [
-          343,
-          24,
-          28,
-          28
+          333,
+          21,
+          39,
+          40
         ],
         "template": [
-          "油箱.png"
+          "油箱2.png"
         ]
       }
     },
