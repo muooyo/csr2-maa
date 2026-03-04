@@ -1,12 +1,75 @@
 {
   "开始挂机": {
     "next": [
+      "[JumpBack]重新匹配",
       "[JumpBack]对手离线",
       "[JumpBack]获胜者",
       // "[JumpBack]识别是否出现油量",
       "[JumpBack]检测匹配"
       // "[JumpBack]匹配检测"
     ]
+  },
+  "重新匹配": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          529,
+          246,
+          219,
+          47
+        ],
+        "expected": [
+          "未发现对手"
+        ]
+      }
+    },
+    "next": [
+      "确认"
+    ]
+  },
+  "确认": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          606,
+          573,
+          70,
+          34
+        ],
+        "expected": [
+          "确定"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "去比赛"
+    ]
+  },
+  "去比赛": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "roi": [
+          994,
+          601,
+          124,
+          44
+        ],
+        "expected": [
+          "去比赛"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    }
   },
   "匹配检测": {
     "recognition": {
@@ -53,7 +116,9 @@
           269
         ],
         "template": [
-          "加油.png"
+          "加油.png",
+          "加油1.png",
+          "加油2.png"
         ]
       }
     },
@@ -185,7 +250,8 @@
           254
         ],
         "template": [
-          "加档.png"
+          "加档.png",
+          "加档2.png"
         ]
       }
     },
