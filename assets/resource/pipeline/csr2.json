@@ -269,6 +269,7 @@
     ]
   },
   "对手离线": {
+    "post_delay": 3000,
     "recognition": {
       "type": "OCR",
       "param": {
@@ -290,6 +291,7 @@
     ]
   },
   "点击确认": {
+    "post_delay": 3000,
     "recognition": {
       "type": "OCR",
       "param": {
