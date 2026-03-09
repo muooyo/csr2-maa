@@ -10,6 +10,7 @@
     ]
   },
   "重新匹配": {
+    "post_delay": 3000,
     "recognition": {
       "type": "OCR",
       "param": {
@@ -29,6 +30,7 @@
     ]
   },
   "确认": {
+    "post_delay": 3000,
     "recognition": {
       "type": "OCR",
       "param": {
