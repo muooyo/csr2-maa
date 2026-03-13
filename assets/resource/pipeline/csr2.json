@@ -1,12 +1,13 @@
 {
   "开始挂机": {
+    "timeout": -1,
     "next": [
       "[JumpBack]重新匹配",
       "[JumpBack]对手离线",
       "[JumpBack]获胜者",
-      // "[JumpBack]识别是否出现油量",
-      "[JumpBack]检测匹配"
-      // "[JumpBack]匹配检测"
+      "[JumpBack]出现油量",
+      // "[JumpBack]检测匹配"
+      "[JumpBack]匹配检测"
     ]
   },
   "重新匹配": {
@@ -134,12 +135,12 @@
   },
   "挡位识别": {
     "next": [
+      "挡位5",
       "[JumpBack]加油",
-      "[JumpBack]挡位1",
-      "[JumpBack]挡位2",
-      "[JumpBack]挡位3",
-      "[JumpBack]挡位4",
-      "挡位5"
+      "[JumpBack]挡位1"
+      // "[JumpBack]挡位2",
+      // "[JumpBack]挡位3",
+      // "[JumpBack]挡位4",
     ]
   },
   "挡位1": {
@@ -148,7 +149,14 @@
       "type": "OCR",
       "param": {
         "expected": [
-          "1"
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
         ],
         "roi": [
           628,
@@ -228,7 +236,7 @@
       "type": "OCR",
       "param": {
         "expected": [
-          "5"
+          "8"
         ],
         "roi": [
           628,
@@ -438,7 +446,7 @@
     ]
   },
   "出现油量": {
-    "post_delay": 360000,
+    "post_delay": 350000,
     "recognition": {
       "type": "TemplateMatch",
       "param": {
@@ -458,7 +466,6 @@
     ]
   },
   "识别油量": {
-    "timeout": -1,
     "recognition": {
       "type": "OCR",
       "param": {
