@@ -5,7 +5,7 @@
       "[JumpBack]重新匹配",
       "[JumpBack]对手离线",
       "[JumpBack]获胜者",
-      "[JumpBack]出现油量",
+      // "[JumpBack]出现油量",
       // "[JumpBack]检测匹配"
       "[JumpBack]匹配检测"
     ]
@@ -90,7 +90,7 @@
       }
     },
     "next": [
-      "加油"
+      "挡位识别"
     ]
   },
   "检测匹配": {
