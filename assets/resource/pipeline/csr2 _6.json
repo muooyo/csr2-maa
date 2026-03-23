@@ -36,8 +36,13 @@
         ]
       }
     },
-    "ClickKey":[141]
+    "action": {
+      "type": "ClickKey",
+      "param": {
+        "key": [
+          141
+        ]
+      }
+    }
   }
-
-
 }
