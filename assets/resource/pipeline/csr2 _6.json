@@ -1,5 +1,6 @@
 {
   "刷6级": {
+    "timeout": -1,
     "next": [
       "检测",
       "检测6级"
@@ -10,7 +11,7 @@
       "type": "OCR",
       "param": {
         "expected": [
-          "1"
+          "我是csr2"
         ],
         "roi": [
           628,
@@ -26,10 +27,10 @@
       "type": "TemplateMatch",
       "param": {
         "roi": [
-          1051,
-          260,
-          204,
-          269
+          741,
+          467,
+          146,
+          73
         ],
         "template": [
           "GT MKIV.png"
