@@ -38,16 +38,16 @@
     //         "./agent/main.py"
     //     ]
     // },
-    // "task": [
-    //     {
-    //         "name": "csr2",
-    //         "entry": "开始挂机"
-    //     }
-    // ],
     "task": [
         {
-            "name": "csr2_6",
-            "entry": "刷6级"
+            "name": "csr2",
+            "entry": "开始挂机"
         }
     ]
+    // "task": [
+    //     {
+    //         "name": "csr2_6",
+    //         "entry": "刷6级"
+    //     }
+    // ]
 }
