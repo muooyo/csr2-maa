@@ -1,0 +1,49 @@
+{
+  "刷6级": {
+    "timeout": -1,
+    "next": [
+      "检测",
+      "检测6级"
+    ]
+  },
+  "检测": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "我是csr2"
+        ],
+        "roi": [
+          628,
+          553,
+          23,
+          30
+        ]
+      }
+    }
+  },
+  "检测6级": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "roi": [
+          741,
+          467,
+          146,
+          73
+        ],
+        "template": [
+          "GT MKIV.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "ClickKey",
+      "param": {
+        "key": [
+          141
+        ]
+      }
+    }
+  }
+}

@@ -91,24 +91,9 @@
       "挡位识别"
     ]
   },
-  "检测匹配": {
-    "post_wait_freezes": {
-      "time": 3000,
-      "target": [
-        893,
-        246,
-        73,
-        72
-      ]
-    },
-    "next": [
-      "挡位识别"
-    ]
-  },
   "加油": {
-    "timeout": -1,
     "recognition": {
-      "type": "NeuralNetworkDetect",
+      "type": "TemplateMatch",
       "param": {
         // "roi": [
         //   1087,
@@ -129,17 +114,19 @@
       }
     },
     "action": {
-      "type": "Click",
-      "param": {}
+      "type": "LongPress",
+      "param": {
+        "duration": 8000
+      }
     },
     "next": [
       "挡位识别"
     ]
   },
   "挡位识别": {
+    "timeout": 25000,
     "next": [
       "挡位5",
-      "[JumpBack]加油",
       "[JumpBack]挡位1"
     ]
   },
@@ -157,66 +144,6 @@
           "6",
           "7",
           "8"
-        ],
-        "roi": [
-          628,
-          553,
-          23,
-          30
-        ]
-      }
-    },
-    "next": [
-      "加档1"
-    ]
-  },
-  "挡位2": {
-    "timeout": 500,
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": [
-          "2"
-        ],
-        "roi": [
-          628,
-          553,
-          23,
-          30
-        ]
-      }
-    },
-    "next": [
-      "加档1"
-    ]
-  },
-  "挡位3": {
-    "timeout": 500,
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": [
-          "3"
-        ],
-        "roi": [
-          628,
-          553,
-          23,
-          30
-        ]
-      }
-    },
-    "next": [
-      "加档1"
-    ]
-  },
-  "挡位4": {
-    "timeout": 500,
-    "recognition": {
-      "type": "OCR",
-      "param": {
-        "expected": [
-          "4"
         ],
         "roi": [
           628,
@@ -252,18 +179,17 @@
   },
   "加档1": {
     "recognition": {
-      "type": "TemplateMatch",
+      "type": "FeatureMatch",
       "param": {
         "roi": [
-          989,
-          466,
-          291,
-          254
+          1095,
+          557,
+          91,
+          83
         ],
-        "template": [
-          "加档.png",
-          "加档2.png"
-        ]
+        "template": [],
+        // "detector": "BRISK"
+        "green_mask": true
       }
     },
     "action": {
