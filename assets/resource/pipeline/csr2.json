@@ -95,12 +95,6 @@
     "recognition": {
       "type": "NeuralNetworkDetect",
       "param": {
-        // "roi": [
-        //   1087,
-        //   284,
-        //   132,
-        //   234
-        // ],
         "labels": [
           "throttle"
         ],
@@ -127,6 +121,7 @@
     "timeout": 25000,
     "next": [
       "挡位5",
+      "[JumpBack]加油",
       "[JumpBack]挡位1"
     ]
   },
@@ -163,7 +158,7 @@
       "type": "OCR",
       "param": {
         "expected": [
-          "8"
+          "5"
         ],
         "roi": [
           628,
@@ -179,17 +174,18 @@
   },
   "加档1": {
     "recognition": {
-      "type": "FeatureMatch",
+      "type": "TemplateMatch",
       "param": {
         "roi": [
-          1095,
-          557,
-          91,
-          83
+          989,
+          466,
+          291,
+          254
         ],
-        "template": [],
-        // "detector": "BRISK"
-        "green_mask": true
+        "template": [
+          "加档.png",
+          "加档2.png"
+        ]
       }
     },
     "action": {
