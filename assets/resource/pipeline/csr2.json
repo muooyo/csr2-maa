@@ -5,8 +5,6 @@
       "[JumpBack]重新匹配",
       "[JumpBack]对手离线",
       "[JumpBack]获胜者",
-      // "[JumpBack]出现油量",
-      // "[JumpBack]检测匹配"
       "[JumpBack]匹配检测"
     ]
   },
@@ -110,18 +108,23 @@
   "加油": {
     "timeout": -1,
     "recognition": {
-      "type": "TemplateMatch",
+      "type": "NeuralNetworkDetect",
       "param": {
-        "roi": [
-          1051,
-          260,
-          204,
-          269
+        // "roi": [
+        //   1087,
+        //   284,
+        //   132,
+        //   234
+        // ],
+        "labels": [
+          "throttle"
         ],
-        "template": [
-          "加油.png",
-          "加油1.png",
-          "加油2.png"
+        "expected": [
+          0
+        ],
+        "model": "best.onnx",
+        "threshold": [
+          0.3
         ]
       }
     },
@@ -138,9 +141,6 @@
       "挡位5",
       "[JumpBack]加油",
       "[JumpBack]挡位1"
-      // "[JumpBack]挡位2",
-      // "[JumpBack]挡位3",
-      // "[JumpBack]挡位4",
     ]
   },
   "挡位1": {
