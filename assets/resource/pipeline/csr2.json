@@ -93,7 +93,7 @@
   },
   "加油": {
     "recognition": {
-      "type": "TemplateMatch",
+      "type": "NeuralNetworkDetect",
       "param": {
         // "roi": [
         //   1087,
