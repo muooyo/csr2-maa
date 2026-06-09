@@ -110,18 +110,12 @@
     "recognition": {
       "type": "NeuralNetworkDetect",
       "param": {
-        "roi": [
-          1051,
-          260,
-          204,
-          269
-        ],
         "model": "best.onnx",
         "labels": [
           "throttle"
         ],
         "threshold": [
-          0.6
+          0.3
         ],
         "expected": [
           0
