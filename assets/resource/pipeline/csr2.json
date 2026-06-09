@@ -106,11 +106,10 @@
     ]
   },
   "加油": {
-    "timeout": -1,
     "recognition": {
       "type": "NeuralNetworkDetect",
       "param": {
-        "model": "best.onnx",
+        "model": "throttle.onnx",
         "labels": [
           "throttle"
         ],
@@ -183,17 +182,17 @@
   },
   "加档1": {
     "recognition": {
-      "type": "TemplateMatch",
+      "type": "NeuralNetworkDetect",
       "param": {
-        "roi": [
-          989,
-          466,
-          291,
-          254
+        "model": "shift.onnx",
+        "labels": [
+          "shift"
         ],
-        "template": [
-          "加档.png",
-          "加档2.png"
+        "threshold": [
+          0.4
+        ],
+        "expected": [
+          0
         ]
       }
     },
