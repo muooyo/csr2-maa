@@ -91,34 +91,49 @@
       "挡位识别"
     ]
   },
-  "加油": {
-    "recognition": {
-      "type": "NeuralNetworkDetect",
-      "param": {
-        "labels": [
-          "throttle"
-        ],
-        "expected": [
-          0
-        ],
-        "model": "best.onnx",
-        "threshold": [
-          0.3
-        ]
-      }
-    },
-    "action": {
-      "type": "LongPress",
-      "param": {
-        "duration": 8000
-      }
+  "检测匹配": {
+    "post_wait_freezes": {
+      "time": 3000,
+      "target": [
+        893,
+        246,
+        73,
+        72
+      ]
     },
     "next": [
       "挡位识别"
     ]
   },
+  "加油": {
+    "timeout": -1,
+    "recognition": {
+      "type": "NeuralNetworkDetect",
+      "param": {
+        "roi": [
+          1051,
+          260,
+          204,
+          269
+        ],
+        "model": "best.onnx",
+        "labels": [
+          "throttle"
+        ],
+        "threshold": [
+          0.6
+        ],
+        "expected": [
+          0
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    }
+  },
   "挡位识别": {
-    "timeout": 25000,
     "next": [
       "挡位5",
       "[JumpBack]加油",
